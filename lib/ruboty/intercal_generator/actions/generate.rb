@@ -6,10 +6,10 @@ module Ruboty
         def call
 ret=StringIO.new
 last=0
-siz=msg.bytes.to_a.size
+siz=message[:text].bytes.to_a.size
 please=(siz+3)/4-2
 ret.puts "DO ,1 <- ##{siz}"
-msg.each_byte.with_index{|e,i|
+message[:text].each_byte.with_index{|e,i|
 	c = e
 	c = (c & 0x55) << 1 | (c & 0xaa) >> 1
 	c = (c & 0x33) << 2 | (c & 0xcc) >> 2
@@ -23,7 +23,7 @@ msg.each_byte.with_index{|e,i|
 ret.puts 'PLEASE READ OUT ,1'
 ret.print 'PLEASE GIVE UP'
 
-          message.reply(ret.to_s)
+          message.reply(ret.string)
         end
       end
     end
