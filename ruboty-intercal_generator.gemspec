@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["cielartisan@gmail.com"]
   spec.summary       = "Ruboty Intercal Generator"
   spec.description   = "Ruboty Intercal Generator"
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/"+spec.authors.first+"/"+spec.name
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
